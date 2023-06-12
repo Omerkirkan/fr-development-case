@@ -13,6 +13,10 @@
         <div class="description-box">
           <p v-text="comic.description"></p>
         </div>
+
+        <div class="desription-creator">
+          <span v-text="getCreators"></span>
+        </div>
       </div>
     </div>
   </template>
@@ -28,12 +32,20 @@
     },
   
     mounted() {
-      console.log(this.comic);
+      console.log(this.comic.creators);
     },
   
     computed: {
       getThumbnail() {
         return `${this.comic.thumbnail.path}.${this.comic.thumbnail.extension}`;
+      },
+      getCreators() {
+
+        const creators = this.comic.creators.items.map((creator) => {
+          return creator.name;
+        });
+
+        return creators.join(', ');
       },
     },
   
