@@ -1,28 +1,41 @@
 <template>
-    <div class="header-container" :class="{ 'header-fixed': checkIsFixed }">
+  <div class="header-container" :class="{ 'header-fixed': checkIsFixed }">
+    <router-link class="header-logo" to="/">
+      <img src="@/assets/images/header-logo.png" alt="logo" />
+    </router-link>
 
-        <router-link class="header-logo" to="/">
-            <img src="@/assets/images/header-logo.png" alt="logo" />
-        </router-link>
-
-        <div class="header-menus">
-
-        </div>
-
-        <div class="header-avatar">
-            <img src="@/assets/images/header-avatar.png" alt="icon">
-        </div>
-
+    <div class="right-icon-area">
+      <div class="header-fav">
+        <span> {{ getFavoritesCount }} </span>
+        <heart-icon :size="26" class="icon" />
+      </div>
+      <div class="header-avatar">
+        <img src="@/assets/images/header-avatar.png" alt="icon" />
+      </div>
     </div>
+  </div>
 </template>
 <script>
-export default {
-    name: 'header-layout',
+import HeartIcon from "vue-material-design-icons/Heart.vue";
+import { mapGetters } from "vuex";
 
-    computed: {
-        checkIsFixed() {
-            return this.$route.name === 'home';
-        }
-    }
-}
+export default {
+  name: "header-layout",
+
+  components: { HeartIcon },
+
+  computed: {
+    ...mapGetters({
+      getFavorites: "favorites/favorites",
+    }),
+
+    checkIsFixed() {
+      return this.$route.name === "home";
+    },
+
+    getFavoritesCount() {
+      return this.getFavorites.length;
+    },
+  },
+};
 </script>

@@ -75,12 +75,33 @@ $banner_image: "~@/assets/images/banner-bg.jpeg";
         bottom: 5px;
         font-size: 14px;
       }
+
+      .comic-add-fav {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        color: #ffffff;
+        cursor: pointer;
+      }
+
+      .fav-active {
+        color: #C02B31;
+      }
+
+      .comic-add-fav:hover .material-design-icon__svg {
+        width: 33px;
+        height: 33px;
+        transition: all 0.3s;
+      }
     }
 
     .comic-card:hover {
       transform: scale(1.04);
       transition: transform 0.4s ease-in-out;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .comic-card:hover .comic-add-fav {
+      color: #C02B31;
     }
   }
 }
