@@ -1,9 +1,9 @@
 <template>
     <div class="header-container" :class="{ 'header-fixed': checkIsFixed }">
 
-        <div class="header-logo">
-            <img src="@/assets/images/header-logo.png" alt="logo">
-        </div>
+        <router-link class="header-logo" to="/">
+            <img src="@/assets/images/header-logo.png" alt="logo" />
+        </router-link>
 
         <div class="header-menus">
 

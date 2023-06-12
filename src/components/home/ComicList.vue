@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="comics-wrapper">
+    <h1 class="comic-list-title"> NETFLIX ORIGINALS </h1>
     <div class="comics-container">
       <comic-card
         v-for="(comic, i) in comics"
@@ -13,6 +14,7 @@
 <script>
 import ComicCard from "@/components/home/ComicCard.vue";
 import { mapActions, mapGetters } from "vuex";
+
 export default {
   name: "ComicsPage",
 

@@ -1,23 +1,9 @@
 <template>
-  <div class="detail-container">
-
-
-    <div class="image-area">
-
-    </div>
-
-    <div class="description-ara">
-
-    </div>
-
-
-    
-
-
-  </div>
+ <comic-details :comic="comic"></comic-details>
 </template>
 <script>
-// import { mapActions, mapGetters } from 'vuex';
+import ComicDetails from "@/components/detail/ComicDetails.vue";
+
 export default {
   name: "ComicDetail",
   props: {
@@ -27,14 +13,8 @@ export default {
     },
   },
 
-  mounted() {
-    console.log(this.comic);
-  },
-
-  computed: {
-    getThumbnail() {
-      return `${this.comic.thumbnail.path}.${this.comic.thumbnail.extension}`;
-    },
+  components: {
+    ComicDetails,
   },
 };
 </script>

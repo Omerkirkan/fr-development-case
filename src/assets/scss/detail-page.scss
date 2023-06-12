@@ -1,10 +1,37 @@
 .detail-container {
     display: flex;
-    border: 3px solid green;
+    justify-content: center;
+    align-items: center;
+    margin-top: 62px;
 
     .image-area {
         width: 50%;
-        border: 3px solid red;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+
+        .image-box {
+            width: 320px;
+            height: 420px;
+        }
+    }
+
+    .description-area {
+        width: 50%;
+        height: 400px;
+
+        h1 {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .description-box {
+            width: 80%;
+            padding: 20px 0px;
+
+        }
+
     }
 
 }
