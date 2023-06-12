@@ -101,6 +101,7 @@ $banner_image: "~@/assets/images/banner-bg.jpeg";
     }
 
     .comic-card:hover .comic-add-fav {
+      transition: all 1s;
       color: #C02B31;
     }
   }
